@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — FAH | Find All Happiness</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+</head>
+<body>
+<header class="nav simple">
+  <a href="index.html#home" class="brand"><img src="fah-logo.png" alt="FAH — Find All Happiness logo" class="logo-img"></a>
+  <nav id="menu"><a href="index.html#story">Our Story</a><a href="index.html#product">Product</a><a href="index.html#faq">FAQ</a><a href="index.html#buy" class="btn small">Buy Now</a></nav>
+</header>
+<main class="page-wrap">
+  <h1>Get in Touch</h1>
+  <p>Customer support: <a id="mail-link" href="#" data-cfg="SUPPORT_EMAIL"></a></p>
+  <p>Instagram: <a id="ig-link" href="#" target="_blank" rel="noopener" data-cfg="INSTAGRAM_URL"></a></p>
+  <div class="cta">
+    <a id="mail-btn" class="btn" href="#">Email Us</a>
+    <a id="ig-btn" class="btn ghost" href="#" target="_blank" rel="noopener">Follow us on Instagram</a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="flogo">FAH — Find All Happiness</p>
+    <nav><a href="index.html#home">Home</a><a href="index.html#story">Our Story</a><a href="index.html#product">Product</a><a href="index.html#buy">Buy Now</a><a href="contact.html">Contact</a></nav>
+    <nav><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="shipping-policy.html">Shipping Policy</a><a href="refund-policy.html">Refund &amp; Cancellation Policy</a></nav>
+    <p>FSSAI Lic. No. 20126232001106 · FAH™</p>
+    <p>© <span id="year"></span> FAH — Find All Happiness. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="script-common.js"></script>
+<script>
+  const cfg = FAHStore.getConfig();
+  document.getElementById("mail-link").href = "mailto:" + cfg.SUPPORT_EMAIL;
+  document.getElementById("mail-btn").href = "mailto:" + cfg.SUPPORT_EMAIL;
+  document.getElementById("ig-link").href = cfg.INSTAGRAM_URL;
+  document.getElementById("ig-btn").href = cfg.INSTAGRAM_URL;
+</script>
+</body>
+</html>

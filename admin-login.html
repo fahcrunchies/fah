@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAH Admin Login</title><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script>
+</head>
+<body>
+<main class="login-wrap">
+<section class="login-card">
+<img src="fah-logo.png" class="login-logo" alt="FAH">
+<h1>Admin Login</h1>
+<p class="sub">Sign in to manage FAH pricing, payment settings and campaign data.</p>
+<form id="login-form">
+<label class="login-field">Email<input id="email" type="email" required autocomplete="username"></label>
+<label class="login-field">Password<input id="password" type="password" required autocomplete="current-password"></label>
+<button class="btn login-btn" type="submit">Login</button>
+<p id="login-error" class="login-error"></p>
+</form>
+<p class="security-note">Authentication is handled by Supabase Auth. Never put a Supabase service-role key in this website.</p>
+</section>
+</main>
+<script>
+document.getElementById("login-form").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const err=document.getElementById("login-error");
+  err.textContent="";
+  if(!FAH.supabase){err.textContent="Supabase is not configured. Update config.js first.";return;}
+  const {error}=await FAH.supabase.auth.signInWithPassword({
+    email:document.getElementById("email").value.trim(),
+    password:document.getElementById("password").value
+  });
+  if(error){err.textContent=error.message;return;}
+  location.replace("admin.html");
+});
+</script>
+</body></html>

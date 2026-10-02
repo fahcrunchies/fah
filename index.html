@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAH — Find All Happiness | Crunchies Desi Masala</title>
+<meta name="description" content="FAH Crunchies Desi Masala — Find All Happiness.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="config.js"></script>
+</head>
+<body>
+<header class="nav">
+  <a href="#home" class="brand"><img src="fah-logo.png" alt="FAH — Find All Happiness logo" class="logo-img"></a>
+  <button class="menu-btn" aria-label="Menu" aria-expanded="false">Hub</button>
+  <nav id="menu">
+    <a href="#story">What the FAH ?</a><a href="#product">Product</a><a href="#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a href="#buy" class="btn small">Slap me</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero hero-single">
+  <div class="hero-text">
+    <p class="kicker">FAH — Welcome to Fahverse Hotter than ur EX </p>
+    <h1>OMG Dude!. Bold Taste. Party Cult. </h1>
+    <p class="lead">A no cap indian snacking experience, presented in a bold, cult format. Discover FAH Crunchies and find a little monkeyness in every bite.</p>
+    <div class="cta"><a href="#buy" class="btn">Slap me</a><a href="#story" class="btn ghost">What The FAH ?</a></div>
+  </div>
+</section>
+
+<section id="story" class="section">
+  <div class="wrap two">
+    <div>
+      <h2>What The FAH ?</h2>
+      <p>FAH was born from a simple idea — to bring the joy of bold Indian flavours into a modern cult snacking experience.</p>
+      <p>We believe some of the best food memories begin with Ex's😉, Bold snacks: shared with mansion family, enjoyed with magic friends, or savoured during a small break from the every monks .</p>
+      <p>FAH takes that familiar spirit and gives it a contemporary, premium expression, created for the way people snack today.</p>
+      <p>Our first creation, FAH Crunchies, brings together bold Desi Masala flavour and a satisfying crunch in a convenient packs.</p>
+      <p><strong>FAH — Find All Happiness</strong> is more than a name. It represents those little moments that make an ordinary man feel like Royal stag — a party simbha, a shared Rhino, a familiar bira, and a moment to be young.</p>
+      <p>Our vision is to build FAH into a brand that celebrates India's bold snacking cult while creating products that naturally belong for exicting magic moments.</p>
+      <p>Because happiness doesn't always have to be a Godfather. Sometimes, it's just one good crunch.</p>
+    </div>
+    <figure class="ph tall"><img src="pack-front.png" alt="FAH Crunchies pack" loading="lazy"></figure>
+  </div>
+</section>
+
+<section id="product" class="section tint">
+  <div class="wrap product-copy">
+    <div>
+      <h2 id="product-name">FAH Crunchies</h2>
+      <ul class="facts">
+        <li><b>Flavour</b> <span id="product-flavour">Desi Masala</span></li>
+        <li><b>Price</b> <span id="product-price">₹69</span> starting price</li>
+      </ul>
+      <p> HOTTER THAN YOUR YEAX </p>
+      <a href="#buy" class="btn">Last chance to Slap me</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Wah! FAH?</h2>
+    <div class="grid">
+      <div class="card"><span class="ic">🌾</span><h3>Desi flavour</h3><p>Masala taste with 18+ content roots.</p></div>
+      <div class="card"><span class="ic">🎁</span><h3>Premium packaging</h3><p>Designed to look as good as it tastes.</p></div>
+      <div class="card"><span class="ic">🌴</span><h3>No palm oil</h3><p>Made zero palm oil.</p></div>
+      <div class="card"><span class="ic">🌶️</span><h3>Bold spice</h3><p>Pure party vibe to wake monkey inside you.</p></div>
+      <div class="card"><span class="ic">👜</span><h3>Single-pack format</h3><p>Easy to carry like your dream, easy to share like your love.</p></div>
+      <div class="card"><span class="ic">✅</span><h3>Consistent quality</h3><p>This is not delulu is the solulu</p></div>
+    </div>
+  </div>
+</section>
+  
+<section id="buy" class="section buy">
+  <div class="wrap narrow">
+    <h2>Find Your Happiness</h2>
+
+    <div class="brand-flow-card" id="step-details">
+      <span class="step-badge">STEP 1</span>
+      <h3>Tell us who is joining the FAH journey</h3>
+      <p class="note">Enter the name you use for your bank/UPI payment and your mobile number.</p>
+      <div class="fields">
+        <label>Name<input id="customer-name" autocomplete="name" required></label>
+        <label>Mobile Number<input id="customer-mobile" inputmode="tel" pattern="[6-9][0-9]{9}" autocomplete="tel-national" required></label>
+      </div>
+      <p id="details-error" class="error"></p>
+      <button id="details-continue" class="btn wide" type="button">Continue</button>
+    </div>
+
+    <div class="brand-flow-card" id="step-quantity" hidden>
+      <span class="step-badge">STEP 2</span>
+      <h3>How many packs would you like?</h3>
+      <div class="qty">
+        <button type="button" id="qty-minus" aria-label="Decrease quantity">−</button>
+        <input id="qty" type="number" inputmode="numeric" min="1" value="1">
+        <button type="button" id="qty-plus" aria-label="Increase quantity">+</button>
+      </div>
+      <p id="qty-error" class="error"></p>
+      <table class="sum">
+        <tr><td>Product</td><td id="summary-product"></td></tr>
+        <tr><td>Quantity</td><td id="summary-qty"></td></tr>
+        <tr><td>Price per pack</td><td id="summary-price"></td></tr>
+        <tr><td>Subtotal</td><td id="summary-subtotal"></td></tr>
+        <tr id="row-cgst"><td>CGST</td><td id="summary-cgst"></td></tr>
+        <tr id="row-sgst"><td>SGST</td><td id="summary-sgst"></td></tr>
+        <tr id="row-igst"><td>IGST</td><td id="summary-igst"></td></tr>
+        <tr class="tot"><td>Total to Pay</td><td id="summary-total"></td></tr>
+      </table>
+      <button id="review-payment" class="btn wide" type="button">Continue to Payment</button>
+    </div>
+
+    <div class="brand-flow-card" id="step-payment" hidden>
+      <span class="step-badge">STEP 3</span>
+      <h3>Ready to pay?</h3>
+      <div class="payment-total"><span>Total to Pay</span><b id="payment-total">₹0</b></div>
+      </p>
+      <button id="open-payment-modal" class="btn wide" type="button">Pay with QR</button>
+      <p class="note">Always verify the receiver and amount in your UPI app before entering your UPI PIN.</p>
+    </div>
+
+    <div class="brand-flow-card" id="step-payment-time" hidden>
+      <span class="step-badge">STEP 4</span>
+      <h3>Payment completed?</h3>
+      <p>Welcome back! Enter the approximate time you made the payment so we can match your submission.</p>
+      <label>Payment Date & Time<input id="payment-time" type="datetime-local"></label>
+      <p id="payment-time-error" class="error"></p>
+      <button id="submit-payment" class="btn wide" type="button">Payment Completed</button>
+    </div>
+
+    <div class="brand-flow-card" id="step-success" hidden>
+      <div class="success-icon">🎉</div>
+      <span class="step-badge">THANK YOU</span>
+      <h3>You're officially part of the FAH journey!</h3>
+      <p id="thank-you-copy"></p>
+      <div class="campaign-box">
+        <h3 id="campaign-headline"></h3>
+        <p id="campaign-message"></p>
+        <div class="campaign-actions">
+          <a id="feedback-btn" class="btn" target="_blank" rel="noopener">Fill Feedback Form</a>
+          <a id="instagram-btn" class="btn ghost" target="_blank" rel="noopener">Follow FAH on Instagram</a>
+        </div>
+      </div>
+      <p><strong>Have you completed all three?</strong></p>
+      <div class="choice-grid">
+        <button class="choice-btn" data-campaign="creative">YES — I gave feedback, followed FAH &amp; promoted FAH on social media</button>
+        <button class="choice-btn" data-campaign="next_time">SORRY DUDE, NEXT TIME 😄</button>
+      </div>
+      <p id="campaign-status" class="ok" hidden></p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="wrap narrow">
+    <h2>FAQ</h2>
+    <details><summary>What is FAH?</summary><p>FAH stands for Find All Happiness and is a bold snack brand inspired by party vibe monkey.</p></details>
+    <details><summary>How do I pay?</summary><p>After reviewing your total, tap Proceed for Payment. Your phone will attempt to open your UPI app. Complete the payment there and return to this page.</p></details>
+    <details><summary>How can I get another pack?</summary><p>Follow FAH on Instagram, fill in the feedback form, and promote FAH Crunchies in your own creative way on social media. Tag FAH, then show us your feedback submission and social-media post to claim another pack FREE, subject to verification.</p></details>
+  </div>
+</section>
+
+
+<div id="payment-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
+  <div class="modal-card payment-modal-card">
+    <button id="close-payment-modal" class="modal-close" type="button" aria-label="Close">×</button>
+    <span class="step-badge">PAYMENT</span>
+    <h2 id="payment-modal-title">Pay with QR</h2>
+    <div class="payment-total"><span>Total to Pay</span><b id="modal-payment-total">₹0</b></div>
+    <div class="pay-method qr-method">
+      <h3>Download QR Scan &amp; Pay</h3>
+      <p>Open your UPI app and scan the Downloaded QR from the gallery.</p>
+      <div id="payment-qr-wrap" class="payment-qr-wrap">
+        <div id="qr-preview-box" class="qr-preview-box" hidden>
+          <img id="payment-qr" alt="FAH dynamic payment QR">
+          </div>
+        <button id="download-payment-qr" class="qr-download" type="button" hidden>Download QR</button>
+        <p id="qr-unavailable" class="note" hidden>Payment QR could not be generated. Please use Pay with UPI App.</p>
+      </div>
+      <p class="note"><strong>After payment come back to site again to confirm payment</strong> Download the clear generated QR to your device, open your UPI app, choose its gallery/photo QR scanner if supported, and select the downloaded QR. The QR already contains the exact total amount.</p>
+    </div>
+
+    <div class="payment-instructions">
+      <strong>Before you pay:</strong>
+      <ol>
+        <li>Check the receiver shown in your UPI app.</li>
+        <li>Enter/confirm the exact total: <b id="modal-instruction-total">₹0</b>.</li>
+        <li>Complete payment inside your UPI app.</li>
+        <li>Never enter your UPI PIN, OTP or bank password on the FAH website.</li>
+      </ol>
+    </div>
+
+    <button id="after-payment" class="btn wide" type="button">Payment done bro</button>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="flogo">FAH — Find All Happiness</div>
+    <nav><span>FSSAI Lic. No. 20126232001106</span></nav>
+    <p>© 2026 FAH — Find All Happiness. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
